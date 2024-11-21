@@ -1,80 +1,99 @@
+
 module.exports = {
   seo: {
-    title: "FastStore Starter",
-    description: "Fast Demo Store",
-    titleTemplate: "%s | FastStore",
-    author: "FastStore",
-  },
-  theme: "custom-theme",
-  platform: "vtex",
+  "title": "FastStore",
+  "description": "A fast and performant store framework",
+  "titleTemplate": "%s | FastStore",
+  "author": "FastStore"
+},
+
+  // Theming
+  theme: 'custom-theme',
+
+  // Ecommerce Platform
+  platform: 'vtex',
+
+  // Platform specific configs for API
   api: {
-    storeId: "storeframework",
-    workspace: "master",
-    environment: "vtexcommercestable",
-    hideUnavailableItems: false,
+    storeId: "nagarropartnerind",
+    workspace: 'master',
+    environment: 'vtexcommercestable',
+    hideUnavailableItems: true,
     incrementAddress: false,
   },
+
+  // Default session
   session: {
     currency: {
-      code: "USD",
-      symbol: "$",
+      code: "SGD",
+      symbol: "S$",
     },
-    locale: "en-US",
-    channel: '{"salesChannel":"1","regionId":""}',
-    country: "USA",
+    locale: "en-SG",
+    channel: '{"salesChannel":1,"regionId":""}',
+    country: "SGP",
     deliveryMode: null,
     addressType: null,
     postalCode: null,
     geoCoordinates: null,
     person: null,
   },
+
   cart: {
-    id: "",
+    id: '',
     items: [],
     messages: [],
     shouldSplitItem: true,
   },
-  storeUrl: "https://vtexfaststore.com",
-  secureSubdomain: "https://secure.vtexfaststore.com",
+
+  // Production URLs
+  storeUrl: "https://nagarropartnerind.vtex.app",
+  secureSubdomain: "https://secure.vtexfaststore.com/",
   checkoutUrl: "https://secure.vtexfaststore.com/checkout",
   loginUrl: "https://secure.vtexfaststore.com/api/io/login",
   accountUrl: "https://secure.vtexfaststore.com/api/io/account",
+
   previewRedirects: {
-    home: "/",
-    plp: "/office",
-    search: "/s?q=headphone",
-    pdp: "/apple-magic-mouse/p",
+    home: '/',
+    plp: "/skin%20care",
+    search: "/s?q=Cashmere",
+    pdp: "/tranquil-retreat-mask/p",
   },
+
+  // Lighthouse CI
   lighthouse: {
-    server: "http://localhost:3000",
+    server: process.env.BASE_SITE_URL || 'http://localhost:3000',
     pages: {
-      home: "/",
-      pdp: "/4k-philips-monitor-99988213/p",
-      collection: "/office",
+      home: '/',
+      pdp: "/tranquil-retreat-mask/p",
+      collection: "/skin%20care",
     },
   },
+
+  // E2E CI
   cypress: {
     pages: {
-      home: "/",
-      pdp: "/4k-philips-monitor-99988213/p",
-      collection: "/office",
-      collection_2: "/technology",
-      collection_filtered:
-        "/office/?category-1=office&marca=acer&facets=category-1%2Cmarca",
-      search: "/s?q=orange",
+      home: '/',
+      pdp: "/tranquil-retreat-mask/p",
+      collection: "/skin%20care",
+      collection_filtered: "/skin%20care/?category-1=skin%20care&brand=Cashmere&facets=category-1%2Cbrand%27",
+      search: "/s?q=Cashmere",
     },
+    browser: 'electron',
   },
+
   analytics: {
-    gtmContainerId: "GTM-PGHZ95N",
+    // https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation,
+    gtmContainerId: "GTM-1234567",
   },
+
   experimental: {
     nodeVersion: 18,
     cypressVersion: 12,
   },
-  account: "storeframework",
+
   vtexHeadlessCms: {
     webhookUrls: [
-      "https://storeframework.myvtex.com/cms-releases/webhook-releases",
+      "https://nagarropartnerind.myvtex.com/cms-releases/webhook-releases",
     ],
   },
-};
+}
