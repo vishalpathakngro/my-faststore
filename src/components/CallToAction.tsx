@@ -19,7 +19,7 @@ export default function CallToAction(props: CallToActionProps) {
 
   */
 
-  const { data, ...rest } = useQuery(query);
+  const { data, ...rest } = useQuery(query, {});
 
   console.log('Data', data, rest);
 
@@ -27,7 +27,6 @@ export default function CallToAction(props: CallToActionProps) {
     <section>
       <h2>{props.title}</h2>
       <a href={props.link.url}>{props.link.text}</a>
-      <p>{data?.extra?.message}</p>
     </section>
   );
 }
