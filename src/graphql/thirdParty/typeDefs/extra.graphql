@@ -1,9 +1,0 @@
-
-type ExtraData {
-  data: String!
-}
-
-type Query {
-  extraData: ExtraData
-  namedExtraData(name: String!): ExtraData
-}
