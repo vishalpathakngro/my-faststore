@@ -1,15 +1,5 @@
 import React from "react";
-import { gql } from '@faststore/core/api'
-import { useQuery_unstable as useQuery } from '@faststore/core/experimental';
-
-export const extraQuery = gql`
-    query Extra {
-       extraData {
-		      data
-	     }
-    }
-}
-`;
+import { usePDP }  from "@faststore/core";
 
 export interface CallToActionProps {
   title: string;
@@ -20,13 +10,9 @@ export interface CallToActionProps {
 }
 
 export default function CallToAction(props: CallToActionProps) {
+  const context = usePDP();
+  console.log('Context', context);
 
-  const { data, isValidating } = useQuery(extraQuery);
-   
-
-
-  console.log('Ttest',data, isValidating);
-  
   return (
     <section>
       <h2>{props.title}</h2>

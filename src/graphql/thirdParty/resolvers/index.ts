@@ -1,7 +1,7 @@
-import { default as extraDataResolver } from "./extra";
+import { default as StoreExtraResolver } from "./extra";
 
 const resolvers = {
-  ...extraDataResolver,
+  ...StoreExtraResolver,
 };
 
 export default resolvers;

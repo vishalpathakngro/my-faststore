@@ -2,21 +2,21 @@
   {
     "name": "CallToAction",
     "schema": {
-      "title": "Call To Action",
-      "description": "Get your 20% off on the first purchase!",
-      "type": "object",
       "required": [
         "title",
         "link"
       ],
+      "type": "object",
+      "title": "Call To Action",
+      "description": "Get your 20% off on the first purchase!",
       "properties": {
         "title": {
           "title": "Title",
           "type": "string"
         },
         "link": {
-          "title": "Link Path",
           "type": "object",
+          "title": "Link Path",
           "required": [
             "text",
             "url"
