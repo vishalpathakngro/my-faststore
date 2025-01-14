@@ -1,11 +1,11 @@
-const extraDataResolver = {
+const extraResolver = {
   Query: {
-    extraData: () => {
+    extra: () => {
       return {
-        data: "Extra data",
+        message: "Extra data",
       };
     },
   },
 };
 
-export default extraDataResolver;
+export default extraResolver;

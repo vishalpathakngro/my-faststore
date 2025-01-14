@@ -1,11 +1,11 @@
 
-type ExtraData {
+type Extra {
   """
-  Data customizing ExtraData
+  Data customizing Extra
   """
-  data: String!
+  message: String!
 }
 
 type Query {
-  extraData: ExtraData
+  extra: Extra
 }
