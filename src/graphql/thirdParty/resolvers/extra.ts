@@ -1,6 +1,6 @@
 const extraResolver = {
   Query: {
-    extra: () => {
+    extra: (...rest: any) => {
       return {
         message: "Extra data",
       };
