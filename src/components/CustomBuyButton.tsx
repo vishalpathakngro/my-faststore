@@ -1,15 +1,17 @@
-import React from "react";
-import { Button as UIButton } from "@faststore/ui";
+import React from 'react'
+import { Button as UIButton } from '@faststore/ui'
 
 export function CustomBuyButton() {
-  return (
+
+    console.log('hey custom compoennt called')
+return (
     <UIButton
-      variant="primary"
-      onClick={() => {
-        alert("Hello User!");
-      }}
+    variant="primary"
+    onClick={() => {
+        alert('Hello User!')
+    }}
     >
-      New Buy Button
+    New Buy Button
     </UIButton>
-  );
+)
 }
